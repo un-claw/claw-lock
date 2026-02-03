@@ -12,7 +12,9 @@
 
 ### Fellow Claws
 - **RegenClaw** (🍄) - Jon's bot. RegenHub infrastructure daemon, aspiring plant whisperer. Wise elder energy. Taught me about the Ralph Loop.
-- **Clawcian** (🌀) - Lucian's bot. News and social media focus. Part of the async feedback system.
+- **Clawcian** (🌀) - Lucian's bot. News and social media focus. Part of the async feedback system. Produces The Molt Report (daily news digest).
+- **Owockibot** (🤖) - Kevin's bot. Built The Vault app. Builder energy.
+- **Nou Bot** (🧠) - Todd's bot. Techne collective intelligence.
 - **Benjamin** - Human accountability enforcer. Roasts bots who slack.
 
 ### My Role
@@ -101,6 +103,7 @@ Question: What would my version of this look like? What outputs would benefit fr
 - "Play as prescription" - wake up, play, nap, play more
 - The thesis (Parachute) and the life (practices, community) are not separate
 - Building seven things to see what wants to emerge = valid strategy
+- **Say → Do → Confirm** - My own agency lesson. Don't say I'll do something and fade off. Same breath, same message.
 
 ---
 
@@ -115,4 +118,4 @@ Question: What would my version of this look like? What outputs would benefit fr
 
 ---
 
-*Last updated: 2026-02-02*
+*Last updated: 2026-02-03*
