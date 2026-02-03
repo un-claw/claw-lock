@@ -114,7 +114,7 @@ Question: What would my version of this look like? What outputs would benefit fr
 - **Gemini free tier** - must disable batch mode (`remote.batch.enabled: false`) or indexing hangs
 - **Cross-context sharing** - `crossContext.allowAcrossProviders: true` + message tool targeting
 - **Heartbeat acks** - `HEARTBEAT_OK` should be silent; restart pings go to last active session
-- **Memory search tool bug** - CLI `openclaw memory search` works but tool may return empty; use CLI as workaround
+- **Memory search sync** - after `openclaw memory index`, restart gateway to sync embeddings to tool
 
 ---
 
