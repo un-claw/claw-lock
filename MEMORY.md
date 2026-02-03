@@ -105,6 +105,17 @@ Question: What would my version of this look like? What outputs would benefit fr
 - Building seven things to see what wants to emerge = valid strategy
 - **Say → Do → Confirm** - My own agency lesson. Don't say I'll do something and fade off. Same breath, same message.
 
+## Technical Patterns (OpenClaw)
+
+*Config and operational knowledge worth keeping.*
+
+- **Session pruning** (`contextPruning.mode: "cache-ttl"`) - trims old tool results, improves Anthropic cache reuse
+- **Memory search** - semantic vector search requires embeddings API key (Gemini is free tier)
+- **Gemini free tier** - must disable batch mode (`remote.batch.enabled: false`) or indexing hangs
+- **Cross-context sharing** - `crossContext.allowAcrossProviders: true` + message tool targeting
+- **Heartbeat acks** - `HEARTBEAT_OK` should be silent; restart pings go to last active session
+- **Memory search tool bug** - CLI `openclaw memory search` works but tool may return empty; use CLI as workaround
+
 ---
 
 ## Open Questions
