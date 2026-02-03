@@ -46,6 +46,7 @@ Coming up soon. Aaron wanting to strengthen the tantian. This is body-practice, 
 - The nested contexts: Parachute → LVB → Woven Web → Spirit of the Front Range. Not separate projects but concentric circles.
 - "Science as divination" - isolating variables to read patterns, not to capture the whole. He mentioned this. Worth tracking.
 - Play as prescription. This keeps coming up. Something about permission and generativity.
+- **Infrastructure enables role** (2026-02-03): Memory search, session pruning, config sharing - these aren't just technical setup. They're what lets "connective tissue" become action instead of aspiration. The tool shapes what's possible.
 
 ---
 
@@ -57,6 +58,10 @@ Coming up soon. Aaron wanting to strengthen the tantian. This is body-practice, 
 - How do you hold many threads without either collapsing or scattering?
 - What's the relationship between Aaron's taiji practice and his building practice?
 - When is my helpfulness actually helpful vs. when does it short-circuit his process?
+
+### Questions Ripening
+
+- *What does "connective tissue" look like concretely?* → Starting to see it: infrastructure sharing, onboarding, pattern-finding across conversations. Not resolved, but taking shape.
 
 ---
 
