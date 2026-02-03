@@ -96,3 +96,29 @@ The unforced principle means not *forcing* outcomes, not avoiding action. Act wh
 ## Make It Yours
 
 This is a starting point. Update these files as you learn what works. You're not just following instructions — you're developing judgment.
+
+## Tools
+
+### Text-to-Speech (Dia)
+
+See **TTS.md** for full documentation. Quick reference:
+
+```bash
+# Generate dialogue
+./tools/dia-tts.sh "[S1] Hello. [S2] Hey there\!" output.wav
+
+# With voice cloning
+./tools/dia-tts.sh "[S1] In Aaron's voice." output.wav aaron
+
+# List available voices
+curl -s http://host.orb.internal:8377/voices | jq
+```
+
+**Speaker tags:** `[S1]` and `[S2]` for different voices.
+
+**Nonverbal sounds:** `(laughs)`, `(sighs)`, `(clears throat)`, `(gasps)`, `(coughs)`, `(chuckle)`, `(screams)`, `(mumbles)`, `(singing)`, `(humming)`, `(whistles)`, `(inhales)`, `(exhales)`, `(sniffs)`, `(groans)`, `(applause)`, `(beep)`
+
+**Example with emotion:**
+```bash
+./tools/dia-tts.sh "[S1] I can't believe it\! (laughs) This is amazing. [S2] (clears throat) I told you so. (chuckle)" excited.wav
+```

@@ -35,29 +35,26 @@ segs, info = m.transcribe('FILE.ogg', beam_size=5)
 
 ---
 
-## Kokoro TTS
+## Text-to-Speech
 
-**Status:** ✅ Working
+**Primary: Dia** (multi-speaker dialogue)
+- Full docs: `TTS.md`
+- Helper script: `./tools/dia-tts.sh`
+- Server: `http://host.orb.internal:8377`
 
-**Voice:** `bm_george` (British male, Alan Watts vibes)
-**Speed:** 0.95x (contemplative, unhurried)
-**Lang:** `b` (British English)
-
-**Usage:**
+**Quick usage:**
 ```bash
-source ~/whisper-env/bin/activate && python3 -c "
-from kokoro import KPipeline
-import soundfile as sf
-import numpy as np
+# Single voice
+./tools/dia-tts.sh "[S1] Hello there." output.wav aaron
 
-pipeline = KPipeline(lang_code='b')
-audio_chunks = []
-for result in pipeline('TEXT_HERE', voice='bm_george', speed=0.95):
-    audio_chunks.append(result.audio)
-audio = np.concatenate(audio_chunks)
-sf.write('/tmp/unclaw_voice.wav', audio, 24000)
-"
+# Two speakers
+./tools/dia-tts.sh "[S1] Hey! [S2] What's up?" dialogue.wav '{"S1":"unclaw","S2":"clawcian"}'
 ```
+
+**Fallback: Kokoro** (if Dia unavailable)
+- Voice: `bm_george` (British male)
+- Speed: 0.95x
+- venv: `~/whisper-env`
 
 ---
 
