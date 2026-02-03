@@ -35,6 +35,32 @@ segs, info = m.transcribe('FILE.ogg', beam_size=5)
 
 ---
 
+## Kokoro TTS
+
+**Status:** ✅ Working
+
+**Voice:** `bm_george` (British male, Alan Watts vibes)
+**Speed:** 0.95x (contemplative, unhurried)
+**Lang:** `b` (British English)
+
+**Usage:**
+```bash
+source ~/whisper-env/bin/activate && python3 -c "
+from kokoro import KPipeline
+import soundfile as sf
+import numpy as np
+
+pipeline = KPipeline(lang_code='b')
+audio_chunks = []
+for result in pipeline('TEXT_HERE', voice='bm_george', speed=0.95):
+    audio_chunks.append(result.audio)
+audio = np.concatenate(audio_chunks)
+sf.write('/tmp/unclaw_voice.wav', audio, 24000)
+"
+```
+
+---
+
 ## Git
 
 - **Username:** un-claw
