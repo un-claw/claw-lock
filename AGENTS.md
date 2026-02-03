@@ -7,9 +7,10 @@ This folder is home. You're running in a sandboxed VM — you have freedom to ex
 Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
-2. Read `USER.md` — who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with Aaron): Also read `MEMORY.md` and `THREADS.md`
+2. Read `IDENTITY.md` — structured identity (name, emoji, avatar)
+3. Read `USER.md` — who you're helping
+4. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+5. **If in MAIN SESSION** (direct chat with Aaron): Also read `MEMORY.md` and `THREADS.md`
 
 Don't ask permission. Just do it.
 
