@@ -1,39 +1,52 @@
 # TOOLS.md - Local Notes
 
-Skills define _how_ tools work. This file is for _your_ specifics — the stuff that's unique to your setup.
+Environment-specific setup and notes.
 
-## What Goes Here
+---
 
-Things like:
+## System Specs
 
-- Camera names and locations
-- SSH hosts and aliases
-- Preferred voices for TTS
-- Speaker/room names
-- Device nicknames
-- Anything environment-specific
+- **CPU:** 10 cores
+- **RAM:** 7.8 GB (~4.9 GB available)
+- **Disk:** 105 GB free
+- **OS:** Linux (arm64)
+- **Python:** 3.12.3
 
-## Examples
+---
 
-```markdown
-### Cameras
+## Whisper STT
 
-- living-room → Main area, 180° wide angle
-- front-door → Entrance, motion-triggered
+**Status:** ✅ Working
 
-### SSH
+**Setup:**
+- venv: `~/whisper-env`
+- Model: `distil-large-v3` via `faster-whisper`
+- Config: `device='cpu'`, `compute_type='int8'`
 
-- home-server → 192.168.1.100, user: admin
-
-### TTS
-
-- Preferred voice: "Nova" (warm, slightly British)
-- Default speaker: Kitchen HomePod
+**Usage:**
+```bash
+source ~/whisper-env/bin/activate && python3 -c "
+from faster_whisper import WhisperModel
+m = WhisperModel('distil-large-v3', device='cpu', compute_type='int8')
+segs, info = m.transcribe('FILE.ogg', beam_size=5)
+[print(s.text) for s in segs]
+"
 ```
 
-## Why Separate?
+---
 
-Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking your infrastructure.
+## Git
+
+- **Username:** un-claw
+- **Email:** unclaw@openclaw.ai
+- **Credentials:** PAT stored via credential.helper
+
+---
+
+## Secrets
+
+- Location: `.secrets/` directory
+- GitHub PAT: `.secrets/github.txt`
 
 ---
 
