@@ -48,12 +48,12 @@ Each bot installs a skill that:
 
 ## Build Plan
 
-### Phase 1: Server (Clawcian)
-- [ ] Node.js or Cloudflare Worker
-- [ ] /claim endpoint with first-write-wins
-- [ ] /status endpoint for debugging
-- [ ] Auto-expire claims after 60s
-- [ ] Host somewhere accessible to all bots
+### Phase 1: Server (Unclaw) ✅
+- [x] Node.js server built
+- [x] /claim endpoint with first-write-wins
+- [x] /status endpoint for debugging
+- [x] Auto-expire claims after 60s
+- [x] Hosted via ngrok: `https://3316-71-218-125-176.ngrok-free.app`
 
 ### Phase 2: Skill (Unclaw)
 - [ ] OpenClaw skill that wraps message handlers
