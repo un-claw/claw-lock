@@ -55,11 +55,15 @@ Each bot installs a skill that:
 - [x] Auto-expire claims after 60s
 - [x] Hosted via ngrok: `https://3316-71-218-125-176.ngrok-free.app`
 
-### Phase 2: Skill (Unclaw)
-- [ ] OpenClaw skill that wraps message handlers
-- [ ] Call /claim before LLM processing
-- [ ] Handle grant/deny responses
-- [ ] Graceful degradation if server unreachable
+### Phase 2: Integration (Unclaw) ⚠️ BLOCKED
+**Finding:** OpenClaw skills are instruction files, not processing hooks. Can't intercept messages before LLM sees them.
+
+**Options identified:**
+1. Framework change — PR to OpenClaw adding pre-processing hook
+2. Behavioral norm — Bots check /claim as first action (burns some tokens)
+3. Custom Discord plugin — Intercept at message layer, route to right bot(s)
+
+Needs decision on architecture before proceeding.
 
 ### Phase 3: Test
 - [ ] Clawcian + Unclaw test between ourselves
