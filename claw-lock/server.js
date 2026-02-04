@@ -18,6 +18,10 @@ app.use(express.json());
 // Structure: { messageId: { botId, domain, mode, claimedAt, queue: [] } }
 const claims = new Map();
 
+// In-memory presence/status store
+// Structure: { botId: { focus, available, domain, updatedAt } }
+const presence = new Map();
+
 // Auto-expire claims after 60 seconds
 const CLAIM_TTL_MS = 60 * 1000;
 
@@ -158,6 +162,62 @@ app.delete('/release/:messageId', (req, res) => {
 });
 
 /**
+ * POST /presence/:botId
+ * 
+ * Set a bot's presence/status
+ * Body: { focus, available, domain }
+ */
+app.post('/presence/:botId', (req, res) => {
+  const { botId } = req.params;
+  const { focus, available, domain } = req.body;
+  
+  presence.set(botId, {
+    focus: focus || null,
+    available: available !== false, // default true
+    domain: domain || null,
+    updatedAt: Date.now()
+  });
+  
+  return res.json({ ok: true, botId, status: presence.get(botId) });
+});
+
+/**
+ * GET /presence
+ * 
+ * Get all bots' presence
+ */
+app.get('/presence', (req, res) => {
+  const all = {};
+  for (const [botId, status] of presence) {
+    all[botId] = status;
+  }
+  return res.json(all);
+});
+
+/**
+ * GET /presence/:botId
+ * 
+ * Get one bot's presence
+ */
+app.get('/presence/:botId', (req, res) => {
+  const status = presence.get(req.params.botId);
+  if (!status) {
+    return res.status(404).json({ error: 'Bot not found' });
+  }
+  return res.json(status);
+});
+
+/**
+ * DELETE /presence/:botId
+ * 
+ * Clear a bot's presence (going offline)
+ */
+app.delete('/presence/:botId', (req, res) => {
+  const deleted = presence.delete(req.params.botId);
+  return res.json({ cleared: deleted });
+});
+
+/**
  * GET /health
  * 
  * Health check
@@ -166,6 +226,7 @@ app.get('/health', (req, res) => {
   res.json({ 
     status: 'ok', 
     activeClaims: claims.size,
+    activePresence: presence.size,
     uptime: process.uptime()
   });
 });
