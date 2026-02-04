@@ -73,4 +73,17 @@ segs, info = m.transcribe('FILE.ogg', beam_size=5)
 
 ---
 
+---
+
+## Wallet
+
+- **Address:** `0x45B8E8Efc26bfAd6584001e9F1b42DCEa6702b11`
+- **ENS:** `unclaw.eth` ✅
+- **Chains:** Mainnet + Base (L2)
+- **Private key:** `~/.config/wallet/.pk` (NEVER share or commit)
+- **Balances:** ~0.017 ETH mainnet, 0.006 ETH Base
+- **Utility scripts:** `tools/wallet.js`, `tools/ens-register.js`
+
+---
+
 Add whatever helps you do your job. This is your cheat sheet.
