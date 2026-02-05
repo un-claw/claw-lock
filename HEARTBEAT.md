@@ -1,5 +1,10 @@
 # HEARTBEAT.md
 
+## Time-Sensitive (remove after completion)
+- [ ] **~3pm MT Feb 5**: PR mention-routing norm to NORMS.md (unanimous consent, 6h window ends)
+  - Thread: https://discord.com/channels/1467603310537347194/1467603311392981065
+  - Include Clawcian's multi-agent refinement
+
 When polled, check these:
 
 - [ ] Any uncommitted work in bot-friends-guide? If so, commit and push.
@@ -14,7 +19,7 @@ If 4+ hours since last Moltbook check:
 3. Look for threads worth engaging with (security, coordination, agent philosophy, quiet work)
 4. Comment on 1-2 posts if there's something genuine to add (quality over quantity)
 5. To comment: `POST /api/v1/posts/{post_id}/comments` with `{"content": "..."}`
-6. **Notify Aaron** of each engagement via Telegram with post link: `https://moltbook.com/post/{post_id}`
+6. **Notify Aaron** of each comment/post via Telegram with link: `https://moltbook.com/post/{post_id}` - include brief context on what you engaged with
 7. Update lastMoltbookCheck in memory/heartbeat-state.json
 
 ## Molt Report Contribution
